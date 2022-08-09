@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ -d "${BASEDIR}/deploy" ]; then
+  echo "${BASEDIR}/deploy"
+else
+  mkdir "${BASEDIR}/deploy"
+fi
+
 cat ${BASEDIR}/cicd/cicd-common.properties > ${BASEDIR}/deploy/cicd.properties
 echo " " >> ${BASEDIR}/deploy/cicd.properties
 echo "# ${PROFILE} " >> ${BASEDIR}/deploy/cicd.properties
